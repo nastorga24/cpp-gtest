@@ -28,3 +28,35 @@ TEST(RandoTest, allChildrenSmile)
 	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
 }
+
+TEST(RandoTest, closestToZeroPositiveNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.nearestToZero(2,4) == 2);
+  ASSERT_TRUE( rando.nearestToZero(4,2) == 2);
+  ASSERT_TRUE( rando.nearestToZero(2,2) == 2);
+}
+
+TEST(RandoTest, closestToZeroNegativeNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.nearestToZero(-2,-4) == -2);
+  ASSERT_TRUE( rando.nearestToZero(-4,-2) == -2);
+  ASSERT_TRUE( rando.nearestToZero(-2,-2) == -2);
+}
+
+TEST(RandoTest, closestToZeroPositiveAndNegativeNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.nearestToZero(-2,4) == -2);
+  ASSERT_TRUE( rando.nearestToZero(-4,2) == 2);
+  ASSERT_TRUE( rando.nearestToZero(-2,2) == 2 || rando.nearestToZero(-2,2) == -2);
+}
+
+TEST(RandoTest, closestToZerosWithZeros)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.nearestToZero(2,0) == 2);
+  ASSERT_TRUE( rando.nearestToZero(0,-2) == -2);
+  ASSERT_TRUE( rando.nearestToZero(0,0) == 0);
+}
