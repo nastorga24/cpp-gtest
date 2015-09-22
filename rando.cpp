@@ -1,6 +1,8 @@
 #include "rando.h"
 //#include <stdlib.h>
-
+//Natalie Astorga
+//09/22/2015
+//CSCI 430
 
 /**
  * Worry if only one child is smiling or if all children are smiling

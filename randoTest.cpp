@@ -1,6 +1,9 @@
 /**
  * Unit Tests for Rando Test
 **/
+//Natalie Astorga
+// 09/22/15
+// CSCI 430
 
 #include <gtest/gtest.h>
 #include "rando.h"
