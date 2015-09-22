@@ -38,6 +38,15 @@ bool Rando::isDivisbleBy(int first, int second)
 **/
 bool Rando::isPrime(int num)
 {
+  int i;
+  int absoluteNum = (num < 0) ? -num : num;
+  if(num == 0)
+    return false;
+  for(i = 2; i*i <= absoluteNum; i++)
+  {
+    if(num%i == 0)
+      return false;
+  }
 	return true;
 }
 

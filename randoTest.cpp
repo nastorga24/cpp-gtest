@@ -29,6 +29,44 @@ TEST(RandoTest, allChildrenSmile)
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
 }
 
+TEST(RandoTest, PositivePrimes)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isPrime(1));
+  ASSERT_TRUE( rando.isPrime(7));
+  ASSERT_TRUE( rando.isPrime(611953));
+}
+
+TEST(RandoTest, NegativePrimes)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isPrime(-1));
+  ASSERT_TRUE( rando.isPrime(-7));
+  ASSERT_TRUE( rando.isPrime(-611953));
+}
+
+TEST(RandoTest, PositiveComposite)
+{
+  Rando rando;
+  ASSERT_FALSE( rando.isPrime(4));
+  ASSERT_FALSE( rando.isPrime(8));
+  ASSERT_FALSE( rando.isPrime(611954));
+}
+
+TEST(RandoTest, NegativeComposite)
+{
+  Rando rando;
+  ASSERT_FALSE( rando.isPrime(-4));
+  ASSERT_FALSE( rando.isPrime(-8));
+  ASSERT_FALSE( rando.isPrime(-611954));
+}
+
+TEST(RandoTest, ZeroPrime)
+{
+  Rando rando;
+  ASSERT_FALSE( rando.isPrime(0));
+}
+
 TEST(RandoTest, DivisbleByPositiveNumbers)
 {
   Rando rando;
