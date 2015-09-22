@@ -29,6 +29,47 @@ TEST(RandoTest, allChildrenSmile)
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
 }
 
+TEST(RandoTest, DivisbleByPositiveNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isDivisbleBy(2,4));
+  ASSERT_TRUE( rando.isDivisbleBy(4,2));
+  ASSERT_FALSE( rando.isDivisbleBy(3,5));
+  ASSERT_FALSE( rando.isDivisbleBy(5,3));
+}
+
+TEST(RandoTest, DivisbleByZeroNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isDivisbleBy(3,0));
+  ASSERT_TRUE( rando.isDivisbleBy(3,0));
+  ASSERT_TRUE( rando.isDivisbleBy(0,-3));
+  ASSERT_TRUE( rando.isDivisbleBy(-3,0));
+  ASSERT_FALSE( rando.isDivisbleBy(0,0));
+}
+
+TEST(RandoTest, DivisbleByPositiveAndNegativeNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isDivisbleBy(2,-4));
+  ASSERT_TRUE( rando.isDivisbleBy(4,-2));
+  ASSERT_TRUE( rando.isDivisbleBy(-2,4));
+  ASSERT_TRUE( rando.isDivisbleBy(-4,2));
+  ASSERT_FALSE( rando.isDivisbleBy(3,-5));
+  ASSERT_FALSE( rando.isDivisbleBy(5,-3));
+  ASSERT_FALSE( rando.isDivisbleBy(-3,5));
+  ASSERT_FALSE( rando.isDivisbleBy(-5,3));
+}
+
+TEST(RandoTest, DivisbleByNegativeNumbers)
+{
+  Rando rando;
+  ASSERT_TRUE( rando.isDivisbleBy(-2,-4));
+  ASSERT_TRUE( rando.isDivisbleBy(-4,-2));
+  ASSERT_FALSE( rando.isDivisbleBy(-3,-5));
+  ASSERT_FALSE( rando.isDivisbleBy(-5,-3));
+}
+
 TEST(RandoTest, closestToZeroPositiveNumbers)
 {
   Rando rando;
